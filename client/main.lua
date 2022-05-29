@@ -123,6 +123,10 @@ RegisterNetEvent('qb-admin:client:spectate', function(targetPed, coords)
     end
 end)
 
+RegisterNetEvent('qb-admin:client:SendReport', function(name, src, msg)
+    TriggerServerEvent('qb-admin:server:SendReport', name, src, msg)
+end)
+
 RegisterNetEvent('qb-admin:client:SaveCar', function()
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
